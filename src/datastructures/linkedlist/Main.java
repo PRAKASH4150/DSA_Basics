@@ -31,6 +31,8 @@ public class Main {
         myLinkedList.reverse();
         seperator();
         myLinkedList.printList();
+        seperator();
+        System.out.println("Middle value is :"+ myLinkedList.findMiddleNode().value);
     }
 
     public static void seperator()

@@ -183,4 +183,34 @@ public class LinkedList {
             temp=after;
         }
     }
+
+    //Method to find the middle node
+    public Node findMiddleNode()
+    {
+        Node slow=head;
+        Node fast=head;
+        while(fast!=null && fast.next!=null)
+        {
+           fast= fast.next.next;
+           slow= slow.next;
+        }
+        return slow;
+    }
+
+    //Method to find if loop exists
+    public boolean hasLoop()
+    {
+        Node slow=head;
+        Node fast=head;
+        while(fast !=null && fast.next!=null)
+        {
+            fast=fast.next.next;
+            slow=slow.next;
+            if(fast==slow) //Meaning a loop exists
+            {
+                return true;
+            }
+        }
+        return false;
+    }
 }
